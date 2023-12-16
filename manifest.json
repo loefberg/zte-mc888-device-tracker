@@ -1,0 +1,7 @@
+{
+  "domain": "zte",
+  "name": "ZTE MC888 Device Tracker",
+  "codeowners": [],
+  "documentation": "https://github.com/loefberg/zte-mc888-device-tracker",
+  "iot_class": "local_polling"
+}
