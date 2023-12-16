@@ -46,7 +46,7 @@ class ZTEDeviceScanner(DeviceScanner):
         self.req = requests.Request(
             "GET",
             "http://{}/goform/goform_get_cmd_process?isTest=false&cmd=station_list".format(host),
-            headers={"Referer": "http://{}}/".format(host)}
+            headers={"Referer": "http://{}/".format(host)}
         ).prepare()
 
         self.last_results = {}
@@ -58,7 +58,7 @@ class ZTEDeviceScanner(DeviceScanner):
         """Scan for new devices and return a list with found device IDs."""
         self._update_zte_info()
 
-        return [item[1] for item in self.last_results["wldev"]]
+        return list(self.last_results.keys())
 
     # inherited
     def get_device_name(self, device: str) -> str | None:
